@@ -356,6 +356,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1537482713224413259, guid: f5a04be710547b043aa43722f6a13ffa, type: 3}
+  velocityMult: 10
+  projLinePrefab: {fileID: 7822007383795062551, guid: 03e5578b1278d2042974d6c03be8a95b, type: 3}
+  matBand: {fileID: 2100000, guid: 226a71394f8800f42abc220853ce698b, type: 2}
+  bandWidth: 0.15
+  bandColor: {r: 0.6313726, g: 0.2901961, b: 0, a: 1}
   launchPoint: {fileID: 0}
   launchPos: {x: 0, y: 0, z: 0}
   projectile: {fileID: 0}
