@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 488618423}
   - component: {fileID: 488618422}
   m_Layer: 5
-  m_Name: GameOver
+  m_Name: UIText_GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 512994771}
   - component: {fileID: 512994770}
   m_Layer: 5
-  m_Name: PlayAgain
+  m_Name: UIButton_PlayAgain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,10 +438,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.13731088, g: 0.6792453, b: 0, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 0.20231223, g: 1, b: 0, a: 1}
+    m_PressedColor: {r: 0.13725491, g: 0.6784314, b: 0, a: 1}
+    m_SelectedColor: {r: 0.13725491, g: 0.6784314, b: 0, a: 1}
+    m_DisabledColor: {r: 0.13725491, g: 0.6784314, b: 0, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -459,7 +459,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 512994771}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1661718821}
+        m_TargetAssemblyTypeName: Restart, Assembly-CSharp
+        m_MethodName: StartNewRound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &512994771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,6 +692,7 @@ GameObject:
   - component: {fileID: 1661718820}
   - component: {fileID: 1661718819}
   - component: {fileID: 1661718818}
+  - component: {fileID: 1661718821}
   m_Layer: 0
   m_Name: _MainCamera
   m_TagString: MainCamera
@@ -753,3 +766,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1661718821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661718817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b005678813f364191e49ff75fcf803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
