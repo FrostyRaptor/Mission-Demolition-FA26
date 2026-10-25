@@ -661,6 +661,7 @@ MonoBehaviour:
   levelMax: 0
   shotsTaken: 0
   castle: {fileID: 0}
+  activeGoal: {fileID: 0}
   mode: 0
   showing: Show Slingshot
 --- !u!1 &1255280823

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaySound : MonoBehaviour
+public class PlaySoundProjectile : MonoBehaviour
 {
   [Header("Audio Settings")]
   public AudioClip soundToPlay;
@@ -24,11 +24,7 @@ public class PlaySound : MonoBehaviour
   {
     if (other.CompareTag("Player") && !slingshotGO.aimingMode)
     {
-      if (soundToPlay == null)
-      {
-        Debug.LogError($"[Audio Error] You forgot to assign the Sound To Play file in the Inspector on {gameObject.name}!");
-        return;
-      }
+      if (soundToPlay == null) return;
 
       cleanAudioSource.PlayOneShot(soundToPlay);
     }

@@ -14,6 +14,7 @@ public enum GameMode
 public class MissionDemolition : MonoBehaviour
 {
   static private MissionDemolition S;
+  static public MissionDemolition Instance { get; private set; }
 
   [Header("Inscribed")]
   public Text uitLevel;
@@ -26,12 +27,14 @@ public class MissionDemolition : MonoBehaviour
   public int levelMax;
   public int shotsTaken;
   public GameObject castle;
+  public Goal activeGoal;
   public GameMode mode = GameMode.idle;
   public string showing = "Show Slingshot";
 
   void Start()
   {
     S = this;
+    Instance = this;
 
     level = 0;
     shotsTaken = 0;
@@ -44,6 +47,7 @@ public class MissionDemolition : MonoBehaviour
   {
     if (castle != null)
     {
+      activeGoal.ResetConfetti();
       Destroy(castle);
     }
 
@@ -75,9 +79,14 @@ public class MissionDemolition : MonoBehaviour
     {
       mode = GameMode.levelEnd;
 
+      if (activeGoal != null)
+      {
+        activeGoal.TriggerConfetti();
+      }
+
       FollowCam.SWITCH_VIEW(FollowCam.eView.both);
 
-      Invoke("NextLevel", 2f);
+      Invoke("NextLevel", 3f);
     }
   }
 
@@ -103,5 +112,10 @@ public class MissionDemolition : MonoBehaviour
   static public GameObject GET_CASTLE()
   {
     return S.castle;
+  }
+
+  public void RegisterCurrentGoal(Goal newGoal)
+  {
+    activeGoal = newGoal;
   }
 }
